@@ -1,0 +1,27 @@
+# requirements.txt
+# ── PDF işleme ────────────────────────────────────────────────────────────────
+pymupdf>=1.24.0           # fitz — PDF okuma
+pytesseract>=0.3.10       # OCR (isteğe bağlı, taralı PDF'ler için)
+Pillow>=10.0.0            # pytesseract bağımlılığı
+
+# ── Embedding ─────────────────────────────────────────────────────────────────
+sentence-transformers>=3.0.0
+# Model: BAAI/bge-m3 (önerilen) veya intfloat/multilingual-e5-large
+# İndirme: python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-m3')"
+
+# ── Vektör veritabanı ─────────────────────────────────────────────────────────
+faiss-cpu>=1.8.0          # GPU yoksa; GPU: faiss-gpu
+
+# ── Lexical arama ─────────────────────────────────────────────────────────────
+rank-bm25>=0.2.2
+
+# ── LLM (Ollama tercih edilir; llama.cpp fallback) ────────────────────────────
+# Ollama: https://ollama.com/download — kurulum sonrası: ollama pull qwen2.5:14b
+llama-cpp-python>=0.2.90  # Ollama yoksa GGUF fallback için
+
+# ── UI ────────────────────────────────────────────────────────────────────────
+streamlit>=1.35.0
+
+# ── Genel ────────────────────────────────────────────────────────────────────
+numpy>=1.26.0
+tqdm>=4.66.0
